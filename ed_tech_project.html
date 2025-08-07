@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learnify - Wakanda Edition</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    /* Base Styling */
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0d0b1f;
+      color: #e0d8ff;
+      cursor: none; /* Hide default cursor */
+    }
+
+    header {
+      background: linear-gradient(to right, #5e17eb, #9d00ff);
+      padding: 20px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 0 15px #6f00ff;
+      animation: fadeInDown 1.2s ease-out;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      background-color: #2b1b47;
+      text-align: center;
+      padding: 12px 0;
+      box-shadow: 0 0 10px #3c007a;
+    }
+
+    nav a {
+      color: #d4c2ff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    .hero {
+      background: linear-gradient(145deg, #26004d, #32005a);
+      padding: 60px 20px;
+      text-align: center;
+      color: #ffffff;
+      animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    .hero h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      animation: pulse 2s infinite;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #9d00ff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #7a00c2;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 30px;
+      gap: 20px;
+    }
+
+    .feature {
+      background-color: #1a102b;
+      padding: 20px;
+      width: 250px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 0 12px rgba(157, 0, 255, 0.2);
+      transition: transform 0.3s;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(157, 0, 255, 0.5);
+    }
+
+    footer {
+      background-color: #1a102b;
+      text-align: center;
+      padding: 20px;
+      color: #a791ff;
+      font-size: 14px;
+    }
+
+    /* Cursor */
+    .custom-cursor {
+      width: 20px;
+      height: 20px;
+      border: 2px solid #a56aff;
+      background: #5e17eb;
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      box-shadow: 0 0 12px #b46aff;
+      transition: transform 0.1s ease;
+    }
+
+    /* Modal */
+    .modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(13, 11, 31, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9998;
+      color: white;
+      font-size: 1.5em;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .modal-content {
+      background: #1a102b;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #9d00ff;
+      text-align: center;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Welcome Modal -->
+  <div class="modal" id="welcomeModal">
+    <div class="modal-content">
+      <p>👑 Welcome, King.<br>Wakanda Forever ✊🏿</p>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="cursor"></div>
+
+  <!-- Main Content -->
+  <header>
+    <h1>Learnify Wakanda</h1>
+    <p>Knowledge is Power. Wakanda Forever.</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Courses</a>
+    <a href="#">Vibranium Vault</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <div class="hero">
+    <h2>Train Like a Marvel Supermind</h2>
+    <p>Explore tech courses powered by Vibranium. Level up with every lesson.</p>
+    <a class="btn" href="#">Join the Revolution</a>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <h3>🧠 Tech Training</h3>
+      <p>Advanced tech courses forged by Wakandan intelligence.</p>
+    </div>
+    <div class="feature">
+      <h3>🎓 Hero Certifications</h3>
+      <p>Earn recognition and shine like the Black Panther's armor.</p>
+    </div>
+    <div class="feature">
+      <h3>🛡️ Vibranium Security</h3>
+      <p>Safeguard your progress with Wakandan-level encryption.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Learnify Wakanda. Powered by Vibranium. Wakanda Forever ✊🏿</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Modal auto-close after 2.5s
+    setTimeout(() => {
+      document.getElementById('welcomeModal').style.display = 'none';
+    }, 2500);
+
+    // Purple glowing cursor
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.pageX + 'px';
+      cursor.style.top = e.pageY + 'px';
+    });
+  </script>
+
+</body>
+</html>
